@@ -8,20 +8,13 @@
 import XCTest
 import TuistExampleLoggingLibrary
 
-final class UnitTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        RTLoggingService.setup()
-    }
-
-    override func tearDownWithError() throws {
-    }
+final class IntegrationTests: XCTestCase {
 
     func testExample() throws {
         RTLogVerbose("does")
         RTLogInfo("this")
-        RTLogWarn("work?")
-        RTLogError("yes?!?")
+        RTLogWarn("integration")
+        RTLogError("work???")
 
         XCTAssertEqual(1, 1)
     }

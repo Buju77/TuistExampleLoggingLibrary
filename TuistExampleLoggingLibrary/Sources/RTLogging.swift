@@ -1,10 +1,10 @@
 import Foundation
-import CocoaLumberjack
+import CocoaLumberjackSwift
 
 public class RTLoggingService {
     public static func setup() {
-        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
-        DDLog.add(DDTTYLogger.sharedInstance) // Uses Xcode console
+//        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
+        DDLog.add(DDTTYLogger.sharedInstance!) // Uses Xcode console
     }
 }
 
@@ -12,13 +12,13 @@ public class RTLoggingService {
 
 public func RTLogVerbose(_ message: @autoclosure () -> CustomStringConvertible) {
     #if DEBUG
-        DDLogVerbose("RT (VERBOSE) >>>>>>>>>>>> \(message().description) <<<<<<<<<<<<")
+        DDLogVerbose("RT (🤓) >>>>>>>>>>>> \(message().description) <<<<<<<<<<<<")
     #endif
 }
 
 public func RTLogInfo(_ message: @autoclosure () -> CustomStringConvertible) {
     #if DEBUG
-        DDLogInfo("RT > \(message().description)")
+        DDLogInfo("RT (✅) > \(message().description)")
     #endif
 }
 
