@@ -58,4 +58,5 @@ let targets = isRootManifest ? [mainTarget, unitTestsTarget, integrationTestsTar
 let project = Project.makeProject(name: mainTargetName,
                                   targets: targets,
                                   addDefaultAdditionalFiles: isRootManifest, // only add when local
-                                  generateSwiftlintTarget: isRootManifest)   // only generate when local
+                                  generateSwiftlintTarget: isRootManifest,   // only generate when local
+                                  generateSchemes: isRootManifest)           // only generate when local
